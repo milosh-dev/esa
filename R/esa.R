@@ -27,14 +27,14 @@
 #' @export
 ESA.list <- function(update = FALSE) {
   # Save
-  #if(!update) {
-  #  if(file.exists("data-raw/esa.rda")){
-  #    #esa.tables <<-
-  #    load("data-raw/esa.rda")
-  #    esa.tables <<- esa.tables
-  #    #      return(datasets)
-  #  }
-  #}
+  if(!update) {
+    if(file.exists("data/esa.rda")){
+      #esa.tables <<-
+      load("data/esa.rda")
+      esa.tables <<- esa.tables
+      #      return(datasets)
+    }
+  }
 
   # Eestikeelsed andmed
   url <- "http://andmebaas.stat.ee/?lang=et"
@@ -60,7 +60,7 @@ ESA.list <- function(update = FALSE) {
 
   # Salvestab andmed keskkonda
   esa.tables <<- as.data.frame(esa.tables)
-  save(esa.tables, file = "data-raw/esa.rda")
+  save(esa.tables, file = "data/esa.rda")
   #  return(datasets)
 }
 

@@ -7,6 +7,7 @@
 #library(tidyverse)  #import dplyr
 #library(rsdmx)
 #library(lubridate)
+# library(rvest)
 
 #' List all available SDMX tables
 #'
@@ -26,14 +27,14 @@
 #' @export
 ESA.list <- function(update = FALSE) {
   # Save
-  if(!update) {
-    if(file.exists("data-raw/esa.rda")){
-      #esa.tables <<-
-      load("data-raw/esa.rda")
-      esa.tables <<- esa.tables
-      #      return(datasets)
-    }
-  }
+  #if(!update) {
+  #  if(file.exists("data-raw/esa.rda")){
+  #    #esa.tables <<-
+  #    load("data-raw/esa.rda")
+  #    esa.tables <<- esa.tables
+  #    #      return(datasets)
+  #  }
+  #}
 
   # Eestikeelsed andmed
   url <- "http://andmebaas.stat.ee/?lang=et"
